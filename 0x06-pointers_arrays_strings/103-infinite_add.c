@@ -1,5 +1,33 @@
 #include "main.h"
 
+/**
+ * a_to_int - get integer value of string of characters
+ * @s: string to change to integer
+ *
+ * Return: integer value of string
+ */
+
+int a_to_int(char *s)
+{
+	int i = 0;
+	int size = 0;
+	int place = 1;
+	int num = 0;
+
+	while (s[i])
+	{
+		size++;
+		i++;
+	}
+	for (i = (size - 1); i >= 0; i--)
+	{
+		num += ((s[i] - '0') * place);
+		place *= 10;
+	}
+	return (num);
+
+}
+
 
 /**
  * infinite_add - adds two numbers.
