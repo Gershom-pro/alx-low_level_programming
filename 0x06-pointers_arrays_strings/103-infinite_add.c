@@ -9,7 +9,6 @@
  *
  * Return: 0 if buffer too small to store result, else return pointer to buffer
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int l1, l2, tmpl, rl, i, sum, num1, num2, carry;
@@ -24,7 +23,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	l1--;
 	l2--;
-	while (i <= l1 || i <= l2){
+	while (i <= l1 || i <= l2)
+	{
 		num1 = num2 = 0;
 		if (i <= l1)
 			num1 = n1[l1 - i] - '0';
@@ -35,14 +35,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		{
 			carry = 1;
 			sum -= 10;
-
 		}
 		else
 			carry = 0;
 		r[i] = sum + '0';
 		i++;
 		rl++;
-
 	}
 	if (carry > 0)
 	{
@@ -55,7 +53,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		tmp[i] = r[rl - i];
 		tmpl++;
 		i++;
-
 	}
 	i = 0;
 	while (i < tmpl)
