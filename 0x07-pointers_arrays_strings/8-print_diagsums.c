@@ -28,4 +28,6 @@ void print_diagsums(int *a, int size)
 
 	}
 
+	printf("%d, %d\n", diagonal_sum_1, diagonal_sum_2);
+
 }
