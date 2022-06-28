@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include "main.h"
 
 /**
  * word_count - Count number of words separated by spaces in a string
@@ -63,7 +62,7 @@ int *find_words_len(char *str, int words)
 }
 
 /**
- * strtow - Split a string into words
+ * **strtow - Split a string into words
  * @str: String to split
  *
  * Return: Return pointer to an array of strings, NULL if it fails
