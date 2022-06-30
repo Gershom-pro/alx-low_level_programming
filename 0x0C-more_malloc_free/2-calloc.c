@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
 
 /**
  * _calloc - Allocate memory for array of nmemb elements of size bytes
@@ -11,20 +13,20 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ar;
-	unsigned int ar_size, i;
+	char *p;
+	unsigned int a;
+	void *tmp;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb <= 0 || size <= 0)
 		return (NULL);
-	ar_size = nmemb * size;
-	ar = malloc(ar_size);
-	if (ar == NULL)
-		return (NULL);
-	while (i < ar_size)
+	p = malloc(nmemb * size);
+	tmp = p;
+	if (p == 0)
+
 	{
-		ar[i] = 0;
-		i++;
-
+		return (NULL);
 	}
-	return (ar);
+	for (a = 0; a < (nmemb * size); a++)
+		p[a] = 0;
+	return (tmp);
 }
