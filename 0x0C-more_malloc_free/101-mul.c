@@ -38,7 +38,6 @@ unsigned int string_length(char *str)
  * @st: string to print
  * Return: none
  */
-
 void print_string(char *st)
 {
 	while (*st == '\0')
@@ -58,6 +57,7 @@ void print_string(char *st)
 /**
  * _calloc - function for memory
  * @number: the number
+ * @size: the size
  * Return: pointer to memory
  */
 void *_calloc(unsigned int number, unsigned int size)
@@ -118,10 +118,8 @@ int main(int argc, char **argv)
 				t = t + multi_res[l - b - ten - 1] - '0';
 			multi_res[l - b - ten - 1] = t % 10 + '0';
 			c = t / 10;
-
 		}
 		multi_res[l - b - ten - 1] += c + '0';
-
 	}
 	print_string(multi_res);
 	free(multi_res);
