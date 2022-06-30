@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _realloc - allocate memory and set all values to 0
@@ -12,34 +13,34 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *p;
-	unsigned int i;
+	unsigned int a;
+	char *new;
+	char *old;
 
-	if (new_size == 0 && ptr != NULL)
+	old = ptr;
+
+	if (old_size == new_size)
+		return (ptr);
+	if (ptr == 0)
+	{
+		new = malloc(new_size * sizeof(char));
+		return (new);
+	}
+	if (new_size == 0 && ptr != 0)
 	{
 		free(ptr);
 		return (NULL);
+
 	}
-
-	if (new_size == old_size)
-		return (ptr);
-
-	if (ptr == NULL)
-	{
-		p = malloc(new_size);
-		if (p == NULL)
-			return (NULL);
-		else
-			return (p);
-	}
-
-	p = malloc(new_size);
-	if (p == NULL)
+	new = malloc(new_size * sizeof(char));
+	if (new == 0)
 		return (NULL);
-
-	for (i = 0; i < old_size && i < new_size; i++)
-		*((char *)p + i) = *((char *)ptr + i);
+	if (new_size < old_size)
+	{
+		for (a = 0; a < new_size; a++)
+			new[a] = old[a];
+		return (new);
+	}
 	free(ptr);
-
-	return (p);
+	return (new);
 }
