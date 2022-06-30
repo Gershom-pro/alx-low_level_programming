@@ -1,5 +1,5 @@
-#include <stdlib>
-#include "main.h"
+#include <stdlib.h>
+
 /**
  * _calloc - Allocate memory for array of nmemb elements of size bytes
  * @nmemb: Number of elemnts
@@ -24,6 +24,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		ar[i] = 0;
 		i++;
+
 	}
 	return (ar);
 }
