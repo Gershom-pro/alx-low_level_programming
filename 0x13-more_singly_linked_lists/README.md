@@ -28,6 +28,8 @@ typedef listint_t 	struct listint_s
 101-print_listint_safe.c 	size_t print_listint_safe(const listint_t *head);
 102-free_listint_safe.c 	size_t free_listint_safe(listint_t **h);
 103-find_loop.c 	listint_t *find_listint_loop(listint_t *head);
+
+
 Tasks 📃
 
     0. Print list
@@ -96,4 +98,6 @@ Tasks 📃
         103-find_loop.c: C function that finds the loop contained in a listint_t linked list using a maximum of two variables.
             If no loop is found - returns NULL.
             Otherwise - returns the address of the node where the loop starts.
+
+End
 
